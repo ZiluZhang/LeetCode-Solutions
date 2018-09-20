@@ -1,0 +1,9 @@
+c++没有hashtable，可以用map代替
+
+
+
+
+tips
+1. 看清return什么东西
+2. 边界条件，list是否为空
+3. 检查return格式内容，也要检查边界条件判断那里return的格式内容
