@@ -1,31 +1,33 @@
-class Solution {
-public:
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        int m = nums1.size();
-        int n = nums2.size();
-        if((m+n)%2 == 1)
-            return findK(nums1, 0, nums2, 0, (m+n)/2+1);
-        else
-            return (findK(nums1, 0, nums2, 0, (m+n)/2) + findK(nums1, 0, nums2, 0, (m+n)/2+1)) / 2.0;
-    }
-    double findK(vector<int>& n1, int k1, vector<int>& n2, int k2, int k) {
-        int m = n1.size();
-        int n = n2.size();
-        if(m-k1 > n-k2)
-            return findK(n2, k2, n1, k1, k);
-        if(m-k1 == 0) return n2[k2+k-1];
-        if(k == 1) return min(n1[k1], n2[k2]);
+
+
+// class Solution {
+// public:
+//     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+//         int m = nums1.size();
+//         int n = nums2.size();
+//         if((m+n)%2 == 1)
+//             return findK(nums1, 0, nums2, 0, (m+n)/2+1);
+//         else
+//             return (findK(nums1, 0, nums2, 0, (m+n)/2) + findK(nums1, 0, nums2, 0, (m+n)/2+1)) / 2.0;
+//     }
+//     double findK(vector<int>& n1, int k1, vector<int>& n2, int k2, int k) {
+//         int m = n1.size();
+//         int n = n2.size();
+//         if(m-k1 > n-k2)
+//             return findK(n2, k2, n1, k1, k);
+//         if(m-k1 == 0) return n2[k2+k-1];
+//         if(k == 1) return min(n1[k1], n2[k2]);
         
-        int mid1 = min(k/2, m-k1);
-        int mid2 = k-mid1;
-        if(n1[k1+mid1-1] < n2[k2+mid2-1])
-            return findK(n1, k1+mid1, n2, k2, k-mid1);
-        else if(n1[k1+mid1-1] > n2[k2+mid2-1])
-            return findK(n1, k1, n2, k2+mid2, k-mid2);
-        else
-            return n1[k1+mid1-1];
-    }
-};
+//         int mid1 = min(k/2, m-k1);
+//         int mid2 = k-mid1;
+//         if(n1[k1+mid1-1] < n2[k2+mid2-1])
+//             return findK(n1, k1+mid1, n2, k2, k-mid1);
+//         else if(n1[k1+mid1-1] > n2[k2+mid2-1])
+//             return findK(n1, k1, n2, k2+mid2, k-mid2);
+//         else
+//             return n1[k1+mid1-1];
+//     }
+// };
 
 
 // public double findMedianSortedArrays(final int[] A, final int[] B) {
