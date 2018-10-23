@@ -1,3 +1,6 @@
+// Missing Number
+// 求和减去现有的
+
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {

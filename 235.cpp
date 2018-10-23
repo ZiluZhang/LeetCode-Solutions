@@ -1,3 +1,6 @@
+// Lowest Common Ancestor of a Binary Search Tree
+// 利用好二叉搜索树！
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

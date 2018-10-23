@@ -1,3 +1,7 @@
+// Excel Sheet Column Title
+// 循环内用n-1代表n的一切
+// 
+
 class Solution {
 public:
     string convertToTitle(int n) {
