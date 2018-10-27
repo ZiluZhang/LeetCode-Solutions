@@ -2,6 +2,7 @@
 // 参见057 Insert Interval
 // 也可以先sort
 // 注意sort自定义函数！写在最外面！参数要用const！
+// 重载运算符
 
 /**
  * Definition for an interval.
