@@ -24,7 +24,7 @@ public:
                 if(cur == endWord) return res+1;
                 for(int i = 0; i < cur.length(); i++) {
                     string newCur = cur;
-                    for(auto a = 'a'; a < 'z'; a++) {
+                    for(auto a = 'a'; a <= 'z'; a++) {
                         newCur[i] = a;
                         if(words.count(newCur) > 0 && newCur != cur) {
                             q.push(newCur);
