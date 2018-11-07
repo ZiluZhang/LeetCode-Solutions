@@ -1,14 +1,7 @@
 // Reverse Linked List
 // 递归和迭代，见代码
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
+
 class Solution {
 public:
     // 递归
