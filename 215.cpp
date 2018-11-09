@@ -2,6 +2,28 @@
 // 快排！
 // 
 
+// priority_queue默认最大堆，但这个题应该用最小堆，所以存相反数
+// 堆大小为k，后面的数，如果比堆顶大，就替换
+// 返回堆顶
+// O(nlogk)
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        int len = nums.size();
+        priority_queue<int> q;
+        for(int i = 0; i < k; i++)
+            q.push(-nums[i]);
+        for(int i = k; i < len; i++) {
+            if(q.top() > -nums[i]) {
+                q.pop();
+                q.push(-nums[i]);
+            }
+        }
+        return -q.top();
+    }
+};
+
+
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
