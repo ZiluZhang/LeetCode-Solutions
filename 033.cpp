@@ -11,12 +11,14 @@ public:
             if(nums[mid] == target) return mid;
             // then mid~right is ascending
             else if(nums[mid] < nums[right]) {
-                if(nums[mid] < target && target <= nums[right]) left = mid+1;
+                if(nums[mid] < target && target <= nums[right]) // target is in ascending part
+                    left = mid+1;
                 else right = mid-1;
             }
-            // then left~mid is descending
+            // then left~mid is ascending
             else {
-                if(nums[left] <= target && target < nums[mid]) right = mid-1;
+                if(nums[left] <= target && target < nums[mid])  // target is in ascending part
+                    right = mid-1;
                 else left = mid+1;
             }
         }
