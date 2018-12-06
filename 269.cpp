@@ -1,6 +1,20 @@
 // Alien Dictionary
-// 
-// 
+// 找出新的字典序
+// 对于每两个相邻的单词，能得出字典序的是，第一个出现的不同的char
+// 把所有字母放在一个unordered_set里，把所有字典序pair放在另一个set里，同时计算入度
+// 用queue每次把入度为0的加上
+// 最后如果子串长度=字母个数，就对了
+
+/*
+set不是hash，unordered_set是hash，所以用pair的时候要自己定义hash操作
+https://coherence0815.wordpress.com/2016/10/13/use-unordered_set-in-c-11/
+struct MyHash {
+    size_t operator()(const pair<int, int> & v) const {
+        return v.first ^ v.second;
+    }
+};
+unordered_set <pair<int, int>, MyHash> myset;
+*/
 
 class Solution {
 public:
