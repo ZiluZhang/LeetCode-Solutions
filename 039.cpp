@@ -30,6 +30,35 @@ public:
     }
 };
 
+// DP
+// dp[i]是一个二维数组，是所有和是i的，并且每一个内部都升序
+class Solution {
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        int num = candidates.size();
+        vector<vector<vector<int>>> dp;
+        sort(candidates.begin(), candidates.end());
+        for(int i = 1; i <= target; i++) {
+            vector<vector<int>> cur;
+            for(int j = 0; j < num; j++) {
+                if(candidates[j] > i) break;
+                else if(candidates[j] == i) {
+                    cur.push_back({candidates[j]});
+                    continue;
+                }
+                for(auto a:dp[i-1-candidates[j]]) {
+                    if(a[0] < candidates[j]) continue;
+                    a.insert(a.begin(), candidates[j]);
+                    cur.push_back(a);
+                }
+            }
+            dp.push_back(cur);
+        }
+        return dp[target-1];
+    }
+};
+
+
 // class Solution {
 // public:
 //     vector<vector<int>> results;
