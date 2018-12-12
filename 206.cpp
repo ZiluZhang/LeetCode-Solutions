@@ -15,6 +15,10 @@ public:
         tmp->next = head;
         return newtmp;
     }
+};
+
+class Solution {
+public:
     // 迭代
     // 三个指针
     ListNode* reverseList(ListNode* head) {
